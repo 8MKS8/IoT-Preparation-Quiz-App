@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.quizapp-mergeDebugResources-35:/layout/activity_quiz.xml",
+        "source": "com.quizapp-main-38:/layout/activity_quiz.xml"
+    },
+    {
+        "merged": "com.quizapp-mergeDebugResources-35:/layout/item_quiz.xml",
+        "source": "com.quizapp-main-38:/layout/item_quiz.xml"
+    },
+    {
+        "merged": "com.quizapp-mergeDebugResources-35:/layout/activity_home.xml",
+        "source": "com.quizapp-main-38:/layout/activity_home.xml"
+    },
+    {
+        "merged": "com.quizapp-mergeDebugResources-35:/layout/activity_quiz_list.xml",
+        "source": "com.quizapp-main-38:/layout/activity_quiz_list.xml"
+    },
+    {
+        "merged": "com.quizapp-mergeDebugResources-35:/layout/activity_result.xml",
+        "source": "com.quizapp-main-38:/layout/activity_result.xml"
+    }
+]
