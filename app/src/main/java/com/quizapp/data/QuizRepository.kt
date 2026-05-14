@@ -2333,6 +2333,2007 @@ object QuizRepository {
         )
     )
 
+    // ── QUIZ 11: Azure Stream Analytics ──────────────────────────────
+    private val azureStreamAnalyticsQuiz = Quiz(
+        id = "azure_stream_analytics_week11",
+        title = "Azure Stream Analytics",
+        description = "Week 11 – Azure Stream Analytics, IoT Edge Jobs & Real-Time Processing",
+        subject = "CS6006",
+        questions = listOf(
+            Question(
+                id = 1,
+                questionText = "What is Azure Stream Analytics?",
+                options = listOf(
+                    "A batch processing service for analyzing historical data stored in Azure Blob Storage",
+                    "A fully managed stream processing engine designed to analyze large volumes of streaming data with sub-millisecond latencies",
+                    "A relational database service for storing IoT telemetry",
+                    "A visualization tool for displaying IoT device dashboards"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Azure Stream Analytics is a fully managed stream processing engine designed to analyze and process large volumes of streaming data with sub-millisecond latencies."
+            ),
+            Question(
+                id = 2,
+                questionText = "Which of the following is a supported input source for Azure Stream Analytics?",
+                options = listOf(
+                    "Azure Blob Storage only",
+                    "Relational databases only",
+                    "Applications, devices, sensors, clickstreams, and social media feeds",
+                    "Only Azure Virtual Machines"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Azure Stream Analytics can process data from a variety of input sources including applications, devices, sensors, clickstreams, and social media feeds."
+            ),
+            Question(
+                id = 3,
+                questionText = "What can patterns and relationships identified by Azure Stream Analytics be used for?",
+                options = listOf(
+                    "Only storing data in Azure Table Storage",
+                    "Triggering actions such as creating alerts, feeding reporting tools, or storing transformed data",
+                    "Replacing IoT Hub for device communication",
+                    "Provisioning new IoT devices automatically"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Identified patterns can trigger actions and workflows such as creating alerts, feeding information to a reporting tool, or storing transformed data for later use."
+            ),
+            Question(
+                id = 4,
+                questionText = "Where else, besides the Azure cloud, can Stream Analytics be run?",
+                options = listOf(
+                    "On-premises SQL servers",
+                    "Azure Kubernetes Service only",
+                    "On the Azure IoT Edge runtime, directly on IoT devices",
+                    "Inside Azure Virtual Machines only"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Stream Analytics is available on the Azure IoT Edge runtime, enabling data processing directly on IoT devices rather than only in the cloud."
+            ),
+            Question(
+                id = 5,
+                questionText = "What are Stream Analytics Edge jobs composed of?",
+                options = listOf(
+                    "A storage account and a virtual network",
+                    "A cloud part for job definition and a module running on IoT devices containing the Stream Analytics engine",
+                    "An IoT Hub and an Azure Functions instance",
+                    "A Docker container registry and a Kubernetes cluster"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Edge jobs consist of two parts: a cloud part where users define inputs, outputs, and queries, and a module running on IoT devices that contains the Stream Analytics engine."
+            ),
+            Question(
+                id = 6,
+                questionText = "How does Azure Stream Analytics deploy edge jobs to devices?",
+                options = listOf(
+                    "Using Azure Blob Storage file transfers",
+                    "Via direct USB connection to each device",
+                    "Using IoT Hub to deploy edge jobs to devices",
+                    "Through Azure Active Directory push policies"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Azure Stream Analytics uses IoT Hub to deploy edge jobs to IoT Edge devices, leveraging IoT Hub's device management and deployment capabilities."
+            ),
+            Question(
+                id = 7,
+                questionText = "Which of the following is a limitation of Stream Analytics Edge jobs compared to cloud jobs?",
+                options = listOf(
+                    "Edge jobs cannot process JSON format data",
+                    "Edge jobs do not support any SQL query language features",
+                    "User-defined functions (UDFs) in JavaScript are not supported for edge jobs",
+                    "Edge jobs cannot connect to IoT Hub as an input source"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "User-defined functions (UDF) in JavaScript are not supported for edge jobs. UDFs are available in C# for IoT Edge jobs (in preview), not JavaScript."
+            ),
+            Question(
+                id = 8,
+                questionText = "Which data formats are supported for input and output in Stream Analytics Edge jobs?",
+                options = listOf(
+                    "AVRO and Parquet only",
+                    "XML and HTML only",
+                    "CSV and JSON only",
+                    "CSV, JSON, and AVRO"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "For Stream Analytics Edge jobs, only CSV and JSON formats are supported for input and output. AVRO format is NOT supported for edge jobs."
+            ),
+            Question(
+                id = 9,
+                questionText = "Which of the following SQL operators is NOT supported for Stream Analytics Edge jobs?",
+                options = listOf(
+                    "SELECT and WHERE",
+                    "GROUP BY and HAVING",
+                    "PARTITION BY",
+                    "JOIN and UNION"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "PARTITION BY is one of the SQL operators not supported for Stream Analytics Edge jobs, along with GetMetadataPropertyValue and Late arrival policy."
+            ),
+            Question(
+                id = 10,
+                questionText = "What technology does Stream Analytics on IoT Edge use to provide a portable, cross-platform solution?",
+                options = listOf(
+                    "Azure Virtual Machines",
+                    "Docker containers",
+                    "Azure Kubernetes Service",
+                    "VMware hypervisors"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Stream Analytics and Azure IoT Edge use Docker containers to provide a portable solution that runs on multiple host operating systems including Windows and Linux."
+            ),
+            Question(
+                id = 11,
+                questionText = "Which processor architectures does Stream Analytics on IoT Edge support?",
+                options = listOf(
+                    "Only x86-64 architecture",
+                    "Only ARM architecture",
+                    "Only Intel x86 architecture",
+                    "Both x86-64 and ARM (Advanced RISC Machines) architectures"
+                ),
+                correctAnswerIndex = 3,
+                explanation = "Stream Analytics on IoT Edge is available as Windows and Linux images running on both x86-64 and ARM (Advanced RISC Machines) processor architectures."
+            ),
+            Question(
+                id = 12,
+                questionText = "Which of the following is a supported stream INPUT type for Stream Analytics Edge jobs?",
+                options = listOf(
+                    "SQL Database",
+                    "Blob Storage",
+                    "Edge Hub",
+                    "Azure Data Explorer"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Supported stream input types for Edge jobs are Edge Hub, Event Hub, and IoT Hub. SQL Database and Blob Storage are output types, not inputs."
+            ),
+            Question(
+                id = 13,
+                questionText = "Which of the following is a supported stream OUTPUT type for Stream Analytics Edge jobs?",
+                options = listOf(
+                    "IoT Hub",
+                    "Azure Digital Twins",
+                    "Azure Maps",
+                    "SQL Database"
+                ),
+                correctAnswerIndex = 3,
+                explanation = "Supported stream output types for Edge jobs include Edge Hub, SQL Database, Event Hub, and Blob Storage/ADLS Gen2. IoT Hub is an input type, not an output type."
+            ),
+            Question(
+                id = 14,
+                questionText = "What happens when you create an input or output stream in a Stream Analytics Edge job?",
+                options = listOf(
+                    "A new IoT Hub namespace is automatically created",
+                    "A corresponding endpoint is created on your deployed module that can be used in deployment routes",
+                    "A new Azure subscription is required for each stream",
+                    "A virtual machine is automatically provisioned to handle the stream"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "For each input and output stream created in a Stream Analytics Edge job, a corresponding endpoint is created on the deployed module — these endpoints are used in deployment routes."
+            ),
+            Question(
+                id = 15,
+                questionText = "What is the key advantage of running Stream Analytics on IoT Edge rather than only in the cloud?",
+                options = listOf(
+                    "It provides higher storage capacity for IoT data",
+                    "It allows processing data directly on IoT devices, reducing latency and cloud data exchange",
+                    "It replaces the need for Azure IoT Hub entirely",
+                    "It provides a graphical dashboard for device management"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Running Stream Analytics on IoT Edge allows processing data directly on devices, reducing latency, reducing the amount of data exchanged with the cloud, and enabling offline scenarios."
+            ),
+            Question(
+                id = 16,
+                questionText = "What does 'sub-millisecond latency' mean in the context of Azure Stream Analytics?",
+                options = listOf(
+                    "Data is processed once per day in large batches",
+                    "Data is stored first and processed within one hour",
+                    "Streaming data can be analyzed and processed in less than one millisecond, enabling near real-time insights",
+                    "Data is transmitted over a sub-1ms network connection"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Sub-millisecond latency means Stream Analytics can process and analyze streaming data in under one millisecond, enabling near real-time pattern detection and action triggering."
+            ),
+            Question(
+                id = 17,
+                questionText = "What is the cloud part of a Stream Analytics Edge job responsible for?",
+                options = listOf(
+                    "Running the Stream Analytics engine on the device",
+                    "Storing raw telemetry data from devices",
+                    "Defining inputs, outputs, queries, and settings such as out-of-order event handling",
+                    "Provisioning devices using DPS"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "The cloud part of an Edge job is responsible for the job definition — users define inputs, outputs, queries, and other settings like out-of-order event handling in the cloud."
+            ),
+            Question(
+                id = 18,
+                questionText = "Which Azure ML feature is NOT supported in Stream Analytics Edge jobs?",
+                options = listOf(
+                    "SQL GROUP BY queries",
+                    "Azure ML functions",
+                    "JSON input format",
+                    "Event Hub as an input"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Azure ML functions are not supported for Stream Analytics Edge jobs. This is one of the key limitations of edge jobs compared to full cloud jobs."
+            ),
+            Question(
+                id = 19,
+                questionText = "What is a common real-world scenario for Azure Stream Analytics?",
+                options = listOf(
+                    "Storing static website content globally",
+                    "Managing virtual machine scale sets",
+                    "Real-time fraud detection by analyzing transaction streams and triggering alerts",
+                    "Batch processing of monthly billing reports"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "A common Stream Analytics scenario is real-time fraud detection — analyzing streaming transaction data to identify suspicious patterns and immediately trigger alerts."
+            ),
+            Question(
+                id = 20,
+                questionText = "What requirement must be met to run Stream Analytics on IoT Edge?",
+                options = listOf(
+                    "Devices must be running Windows Server 2019 or later",
+                    "Devices must have at least 16GB of RAM",
+                    "Devices must be able to run Azure IoT Edge",
+                    "Devices must be physically located in an Azure datacenter region"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "To run Stream Analytics on IoT Edge, you need devices that are capable of running Azure IoT Edge — the platform requirement for executing edge containerized workloads."
+            )
+        )
+    )
+
+    // ── QUIZ 12: Serverless Computing ────────────────────────────────
+    private val serverlessComputingQuiz = Quiz(
+        id = "serverless_computing_week14",
+        title = "Serverless Computing",
+        description = "Week 14 – Serverless Computing, Azure Functions & Patterns",
+        subject = "CS6006",
+        questions = listOf(
+            Question(
+                id = 1,
+                questionText = "What is the core idea behind serverless computing?",
+                options = listOf(
+                    "Running applications on dedicated physical servers owned by the developer",
+                    "Abstracting infrastructure management so developers focus on writing code rather than managing servers",
+                    "Deploying applications only on virtual machines managed by the developer",
+                    "A computing model with no servers involved whatsoever"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Serverless computing abstracts infrastructure management away from developers, allowing them to focus on writing code while the cloud provider handles all server provisioning, scaling, and maintenance."
+            ),
+            Question(
+                id = 2,
+                questionText = "Which of the following is a benefit of serverless computing?",
+                options = listOf(
+                    "Full control over the operating system and hardware",
+                    "Fixed monthly cost regardless of usage",
+                    "No infrastructure management required",
+                    "Guaranteed zero cold start times"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "A key benefit of serverless computing is no infrastructure management — developers don't need to provision, configure, or maintain servers, freeing them to focus on application code."
+            ),
+            Question(
+                id = 3,
+                questionText = "What does 'dynamic scalability' mean as a benefit of serverless computing?",
+                options = listOf(
+                    "You manually add more servers when traffic increases",
+                    "The infrastructure automatically scales up or down based on demand without developer intervention",
+                    "You pay a fixed cost for a pre-determined number of server instances",
+                    "Scaling is limited to a maximum of 10 instances"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Dynamic scalability in serverless means the platform automatically scales resources up or down in response to demand — no manual intervention or pre-provisioning required."
+            ),
+            Question(
+                id = 4,
+                questionText = "What is 'faster time to market' as a serverless benefit referring to?",
+                options = listOf(
+                    "Serverless applications deploy faster because they use smaller containers",
+                    "Developers can build and deploy applications faster by not spending time managing infrastructure",
+                    "Serverless functions execute faster than traditional server-based functions",
+                    "Cloud providers guarantee faster network speeds for serverless apps"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Faster time to market means developers spend less time on infrastructure setup and management, allowing them to focus on building features and ship applications more quickly."
+            ),
+            Question(
+                id = 5,
+                questionText = "What does 'more efficient use of resources' mean in serverless computing?",
+                options = listOf(
+                    "Serverless uses more CPU than traditional servers",
+                    "You pay only for the compute time consumed when your code runs, not for idle server time",
+                    "Serverless requires fewer developers to manage the application",
+                    "Resources are shared across multiple cloud providers simultaneously"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Serverless provides more efficient resource use because you only pay for the exact compute time your code consumes — unlike traditional servers that charge for idle time too."
+            ),
+            Question(
+                id = 6,
+                questionText = "Which of the following is a serverless application pattern?",
+                options = listOf(
+                    "Monolithic architecture pattern",
+                    "Client-server pattern",
+                    "Serverless API gateway",
+                    "Multi-tier N-tier pattern"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Serverless API gateway is one of the serverless application patterns. Others include serverless functions, serverless Kubernetes, serverless workflows, and serverless application environments."
+            ),
+            Question(
+                id = 7,
+                questionText = "What is Azure Functions?",
+                options = listOf(
+                    "A managed Kubernetes service for running containerized applications",
+                    "A serverless solution allowing developers to write less code, maintain less infrastructure, and save on costs",
+                    "A virtual machine service for running .NET applications",
+                    "A managed database service for storing application data"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Azure Functions is a serverless solution that allows developers to write less code, maintain less infrastructure, and save on costs — the cloud handles all server resources needed to run the application."
+            ),
+            Question(
+                id = 8,
+                questionText = "In Azure Functions, who is responsible for deploying and maintaining the servers?",
+                options = listOf(
+                    "The developer must configure and deploy servers manually",
+                    "A dedicated DevOps team manages all server infrastructure",
+                    "The cloud infrastructure handles all server provisioning and maintenance automatically",
+                    "A third-party managed service provider"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "With Azure Functions, the cloud infrastructure provides all up-to-date resources needed to keep applications running — developers don't worry about deploying or maintaining servers."
+            ),
+            Question(
+                id = 9,
+                questionText = "Which Azure service can be used as a low-latency event trigger for Azure Functions?",
+                options = listOf(
+                    "Azure Blob Storage",
+                    "Azure Event Grid",
+                    "Azure Virtual Network",
+                    "Azure DNS"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Azure Event Grid provides low-latency event triggers for Azure Functions, enabling near-real-time data processing as part of the hot path for streaming and event processing scenarios."
+            ),
+            Question(
+                id = 10,
+                questionText = "In a real-time stream processing scenario, where can Azure Functions store processed IoT data for use in an analytics dashboard?",
+                options = listOf(
+                    "Azure Blob Storage cold tier",
+                    "Azure Table Storage",
+                    "Azure Cosmos DB",
+                    "Azure File Storage"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "In real-time stream processing, Azure Functions can process IoT and cloud telemetry in near real-time and store it in Azure Cosmos DB for use in analytics dashboards."
+            ),
+            Question(
+                id = 11,
+                questionText = "What Azure service provides real-time output for Azure Functions in stream processing scenarios?",
+                options = listOf(
+                    "Azure Blob Storage",
+                    "Azure SignalR",
+                    "Azure Table Storage",
+                    "Azure DNS"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Azure SignalR provides real-time output capabilities for Azure Functions, enabling scenarios that push data to clients in near-real-time as part of stream processing pipelines."
+            ),
+            Question(
+                id = 12,
+                questionText = "How can Azure Functions be used with Machine Learning and AI?",
+                options = listOf(
+                    "Azure Functions can only run simple arithmetic calculations",
+                    "Functions can connect to Azure OpenAI, call TensorFlow models, or use Azure AI services to process and classify data",
+                    "Azure Functions replaces the need for dedicated ML training infrastructure",
+                    "Functions can only trigger ML jobs but cannot process their outputs"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Azure Functions can integrate with Azure OpenAI for text/chat completions, call TensorFlow models, and use Azure AI services — for example, to process and classify a stream of images."
+            ),
+            Question(
+                id = 13,
+                questionText = "What Azure OpenAI binding extension capability does Azure Functions provide?",
+                options = listOf(
+                    "Training new machine learning models from scratch",
+                    "Storing OpenAI model weights in Azure Blob Storage",
+                    "Enabling text and chat completions, assistants, embeddings, and semantic search within function code",
+                    "Replacing Azure Cognitive Services with a serverless equivalent"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "The Azure OpenAI binding extension lets you integrate Azure OpenAI features into function code — including text completions, chat completions, assistants, embeddings, and semantic search."
+            ),
+            Question(
+                id = 14,
+                questionText = "How can Azure Functions be used to run scheduled tasks?",
+                options = listOf(
+                    "By manually triggering the function every time a task needs to run",
+                    "By defining a cron schedule that triggers the function at specified intervals",
+                    "By using Azure Virtual Machines to call the function on a schedule",
+                    "Scheduled tasks are not supported in Azure Functions"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Azure Functions supports cron schedule triggers, allowing you to define exactly when and how often a function runs — such as analyzing a database for duplicate entries every 15 minutes."
+            ),
+            Question(
+                id = 15,
+                questionText = "Which serverless platform is best suited for AWS-heavy environments?",
+                options = listOf(
+                    "Azure Functions",
+                    "Google Cloud Functions",
+                    "AWS Lambda",
+                    "Azure Logic Apps"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "AWS Lambda is best suited for AWS-heavy environments, offering strong AWS service integrations and better cold start mitigation via Provisioned Concurrency."
+            ),
+            Question(
+                id = 16,
+                questionText = "Which serverless platform is ideal for enterprises using Microsoft technologies like C# and .NET?",
+                options = listOf(
+                    "AWS Lambda",
+                    "Google Cloud Functions",
+                    "Azure Functions",
+                    "Firebase Functions"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Azure Functions is ideal for enterprises using Microsoft technologies (C#, .NET) and Azure services like Event Grid, Service Bus, and Logic Apps."
+            ),
+            Question(
+                id = 17,
+                questionText = "Which serverless platform is a good fit for applications relying on Firebase, Pub/Sub, and BigQuery?",
+                options = listOf(
+                    "Azure Functions",
+                    "AWS Lambda",
+                    "Google Cloud Functions",
+                    "Azure Logic Apps"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Google Cloud Functions is a good fit for Google Cloud-native applications, especially those relying on Firebase, Pub/Sub, and BigQuery integrations."
+            ),
+            Question(
+                id = 18,
+                questionText = "What is 'Provisioned Concurrency' in the context of serverless platforms?",
+                options = listOf(
+                    "A feature that limits how many functions can run simultaneously",
+                    "An AWS Lambda feature that mitigates cold start latency by keeping function instances pre-warmed",
+                    "A billing model for concurrent serverless executions",
+                    "A Google Cloud feature for running parallel ML workloads"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Provisioned Concurrency is an AWS Lambda feature that keeps function instances pre-warmed and ready to respond, significantly mitigating cold start latency issues."
+            ),
+            Question(
+                id = 19,
+                questionText = "What is 'Serverless Kubernetes' as a serverless application pattern?",
+                options = listOf(
+                    "Running Kubernetes on physical servers without a hypervisor",
+                    "A pattern where Kubernetes clusters scale automatically and you don't manage the underlying node infrastructure",
+                    "A completely stateless version of Kubernetes with no persistent storage",
+                    "Replacing Kubernetes entirely with serverless functions"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Serverless Kubernetes is a pattern where the underlying node infrastructure is managed by the cloud provider — you deploy containers without managing the servers running them, combining container flexibility with serverless simplicity."
+            ),
+            Question(
+                id = 20,
+                questionText = "What is the best approach to maximize benefits when adopting serverless computing?",
+                options = listOf(
+                    "Use serverless only for compute and manage all other services traditionally",
+                    "Use an end-to-end serverless platform providing a comprehensive set of serverless technologies across compute, database, messaging, analytics, and AI",
+                    "Adopt serverless only for non-critical background tasks",
+                    "Use serverless exclusively for mobile applications"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Using an end-to-end serverless platform that covers compute, database, messaging, analytics, and AI ensures the organization gains maximum benefit — every component of the application benefits from the serverless approach."
+            )
+        )
+    )
+
+    // ── QUIZ 13: Cloud & IoT Systems Security ────────────────────────
+    private val cloudIoTSecurityQuiz = Quiz(
+        id = "cloud_iot_security_week15",
+        title = "Cloud & IoT Systems Security",
+        description = "Week 15 – IAM, Microsoft Entra ID, IoT Threat Modeling & Security",
+        subject = "CS6006",
+        questions = listOf(
+            Question(
+                id = 1,
+                questionText = "What does IAM stand for in cloud security?",
+                options = listOf(
+                    "Internet Access Management",
+                    "Identity and Access Management",
+                    "Infrastructure and Application Monitoring",
+                    "Integrated Authentication Mechanism"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "IAM stands for Identity and Access Management — a framework of policies and technologies that ensures the right people have the right access to the right resources."
+            ),
+            Question(
+                id = 2,
+                questionText = "What is the primary purpose of Identity and Access Management (IAM)?",
+                options = listOf(
+                    "To encrypt data stored in cloud databases",
+                    "To monitor network traffic for suspicious activity",
+                    "To ensure the right individuals have appropriate access to the right resources at the right times",
+                    "To provide firewall rules for cloud virtual networks"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "IAM ensures that the right individuals have appropriate access to the right resources at the right times and for the right reasons — controlling who can access what in a system."
+            ),
+            Question(
+                id = 3,
+                questionText = "What is the difference between Authentication and Authorization in IAM?",
+                options = listOf(
+                    "Authentication grants access to resources; Authorization verifies identity",
+                    "Authentication verifies who you are; Authorization determines what you are allowed to do",
+                    "Authentication encrypts data; Authorization decrypts data",
+                    "There is no difference — they are the same process"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Authentication verifies the identity of a user (who you are), while Authorization determines what resources and actions that verified user is permitted to access or perform."
+            ),
+            Question(
+                id = 4,
+                questionText = "What is Microsoft Entra ID?",
+                options = listOf(
+                    "A cloud-based firewall service for Azure virtual networks",
+                    "Microsoft's cloud-based Identity and Access Management service",
+                    "A storage encryption service for Azure Blob Storage",
+                    "A monitoring tool for tracking Azure resource costs"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Microsoft Entra ID (formerly Azure Active Directory) is Microsoft's cloud-based Identity and Access Management service, enabling users to sign in and access resources securely."
+            ),
+            Question(
+                id = 5,
+                questionText = "Which of the following groups uses Microsoft Entra ID?",
+                options = listOf(
+                    "Only individual developers building personal apps",
+                    "Only on-premises Windows Server administrators",
+                    "IT administrators, app developers, and business subscribers to Microsoft 365 or Azure",
+                    "Only government agencies and regulated industries"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Microsoft Entra ID is used by IT administrators (to control access), app developers (to add authentication to apps), and business subscribers to Microsoft services like Microsoft 365 and Azure."
+            ),
+            Question(
+                id = 6,
+                questionText = "What are the five major steps of threat modeling?",
+                options = listOf(
+                    "Plan, Design, Build, Test, Deploy",
+                    "Defining security requirements, Creating an application diagram, Identifying threats, Mitigating threats, Validating that threats have been mitigated",
+                    "Discover, Analyze, Respond, Recover, Review",
+                    "Authentication, Authorization, Encryption, Monitoring, Patching"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "The five major threat modeling steps are: (1) Defining security requirements, (2) Creating an application diagram, (3) Identifying threats, (4) Mitigating threats, and (5) Validating that threats have been mitigated."
+            ),
+            Question(
+                id = 7,
+                questionText = "Why is threat modeling important when designing an IoT architecture?",
+                options = listOf(
+                    "It reduces the cost of IoT hardware procurement",
+                    "Understanding how an attacker might compromise a system helps ensure appropriate mitigations are in place from the start",
+                    "It speeds up the deployment of IoT devices to production",
+                    "It replaces the need for encryption in IoT solutions"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Threat modeling helps identify vulnerabilities early — understanding how an attacker might compromise a system allows appropriate defenses to be built into the architecture from the start."
+            ),
+            Question(
+                id = 8,
+                questionText = "What are the four IoT architecture zones used in threat modeling?",
+                options = listOf(
+                    "Hardware, Software, Network, and Cloud",
+                    "Device, Field gateway, Cloud gateway, and Service",
+                    "Sensors, Actuators, Hub, and Storage",
+                    "Edge, Fog, Cloud, and Application"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "IoT architecture is divided into four zones for threat modeling: Device, Field gateway, Cloud gateway, and Service — each with its own security requirements and trust boundaries."
+            ),
+            Question(
+                id = 9,
+                questionText = "What is a 'trust boundary' in IoT security?",
+                options = listOf(
+                    "A firewall rule preventing devices from accessing the internet",
+                    "A physical wall separating IoT devices from network infrastructure",
+                    "The boundary between zones where data transitions from one source to another and may be subject to threats",
+                    "A certificate authority that validates device identities"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "A trust boundary is the separation between IoT zones representing a data transition point. During this transition, data could be subject to threats like spoofing, tampering, and denial of service."
+            ),
+            Question(
+                id = 10,
+                questionText = "Which of the following is a threat that data crossing a trust boundary may face?",
+                options = listOf(
+                    "Data compression",
+                    "Load balancing",
+                    "Spoofing",
+                    "Caching"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Spoofing is one of the six threats data may face at trust boundaries. The full set is: Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, and Elevation of privilege."
+            ),
+            Question(
+                id = 11,
+                questionText = "What does 'Tampering' mean as an IoT security threat?",
+                options = listOf(
+                    "An attacker pretends to be a legitimate device or user",
+                    "An attacker denies performing a malicious action",
+                    "An attacker modifies data in transit or at rest without authorization",
+                    "An attacker floods the system with requests to make it unavailable"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Tampering refers to the unauthorized modification of data — an attacker intercepts and alters data in transit or modifies stored data, compromising its integrity."
+            ),
+            Question(
+                id = 12,
+                questionText = "What does 'Repudiation' mean as an IoT security threat?",
+                options = listOf(
+                    "Unauthorized access to sensitive data",
+                    "A threat where an attacker denies having performed a malicious action, making it difficult to trace",
+                    "Overloading a service to make it unavailable",
+                    "Gaining unauthorized elevated privileges in a system"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Repudiation occurs when an attacker denies having performed a malicious action, and there is no way to prove otherwise — often addressed through logging and audit trails."
+            ),
+            Question(
+                id = 13,
+                questionText = "What does 'Elevation of Privilege' mean as an IoT security threat?",
+                options = listOf(
+                    "A legitimate user is given additional permissions by an admin",
+                    "An attacker gains more access rights than intended, allowing them to perform unauthorized actions",
+                    "A cloud service is scaled up to handle more devices",
+                    "An IoT device is given a firmware upgrade remotely"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Elevation of Privilege occurs when an attacker gains more access rights or permissions than they are authorized to have, enabling them to perform actions beyond their intended scope."
+            ),
+            Question(
+                id = 14,
+                questionText = "What does 'Information Disclosure' mean as an IoT security threat?",
+                options = listOf(
+                    "Publishing IoT device documentation publicly",
+                    "Sending device telemetry to authorized cloud services",
+                    "Unauthorized exposure of sensitive data to individuals who should not have access",
+                    "Sharing device firmware updates with registered users"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Information Disclosure is the unauthorized exposure of sensitive data — an attacker gains access to data they are not authorized to see, such as device credentials, user data, or proprietary information."
+            ),
+            Question(
+                id = 15,
+                questionText = "What does 'Denial of Service' (DoS) mean as an IoT security threat?",
+                options = listOf(
+                    "A user voluntarily disconnecting their IoT device from the cloud",
+                    "An attacker flooding a system with requests to overwhelm it and make it unavailable to legitimate users",
+                    "A cloud service refusing to accept connections from unregistered devices",
+                    "An IoT device running out of battery power"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Denial of Service (DoS) is an attack where the attacker overwhelms a system with traffic or requests, making it unavailable to legitimate users or devices."
+            ),
+            Question(
+                id = 16,
+                questionText = "Why does each IoT zone have its own authentication and authorization requirements?",
+                options = listOf(
+                    "Because different zones use different programming languages",
+                    "Because each zone handles different types of data and has different trust levels, requiring appropriate controls",
+                    "Because cloud providers charge separately for each zone's security",
+                    "Because IoT devices cannot use the same protocols as cloud services"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Each IoT zone handles different data with different sensitivity levels and has different trust relationships, requiring tailored authentication and authorization controls appropriate to each zone's risk profile."
+            ),
+            Question(
+                id = 17,
+                questionText = "What is 'Spoofing' as an IoT security threat?",
+                options = listOf(
+                    "Encrypting data so only authorized parties can read it",
+                    "An attacker impersonating a legitimate device, user, or service to gain unauthorized access",
+                    "Overwriting device firmware with malicious code",
+                    "Intercepting messages between devices and the cloud"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Spoofing is when an attacker impersonates a legitimate entity — such as a trusted device, user, or service — to gain unauthorized access to the system."
+            ),
+            Question(
+                id = 18,
+                questionText = "What is the role of the 'Field Gateway' zone in IoT architecture?",
+                options = listOf(
+                    "It is where end-user applications consume IoT data",
+                    "It is the cloud service that stores and processes IoT telemetry",
+                    "It sits between IoT devices and the cloud gateway, aggregating and preprocessing device data locally",
+                    "It is the individual IoT sensor or actuator device"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "The Field Gateway zone sits between IoT devices and the cloud, aggregating data from multiple devices, preprocessing it locally, and forwarding it to the cloud gateway — acting as a local broker."
+            ),
+            Question(
+                id = 19,
+                questionText = "What authentication and authorization standard is commonly used in cloud IAM systems?",
+                options = listOf(
+                    "FTP and SFTP",
+                    "OAuth 2.0 and OpenID Connect",
+                    "SMTP and IMAP",
+                    "DNS and DHCP"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "OAuth 2.0 and OpenID Connect are the widely used open standards for authentication and authorization in cloud IAM systems, enabling secure delegated access and identity verification."
+            ),
+            Question(
+                id = 20,
+                questionText = "What is the correct order of the five threat modeling steps?",
+                options = listOf(
+                    "Identify threats → Define requirements → Create diagram → Mitigate → Validate",
+                    "Create diagram → Identify threats → Define requirements → Validate → Mitigate",
+                    "Define security requirements → Create application diagram → Identify threats → Mitigate threats → Validate mitigations",
+                    "Mitigate threats → Validate → Define requirements → Create diagram → Identify threats"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "The correct order is: (1) Define security requirements, (2) Create an application diagram, (3) Identify threats, (4) Mitigate threats, (5) Validate that threats have been mitigated."
+            )
+        )
+    )
+
+    // ── QUIZ 14: Azure IoT Edge ───────────────────────────────────────
+    private val azureIoTEdgeQuiz = Quiz(
+        id = "azure_iot_edge_week16",
+        title = "Azure IoT Edge",
+        description = "Week 16 – Azure IoT Edge, Modules, Runtime & Edge Computing",
+        subject = "CS6006",
+        questions = listOf(
+            Question(
+                id = 1,
+                questionText = "What is the core concept behind Azure IoT Edge?",
+                options = listOf(
+                    "Moving all IoT data processing to a central cloud datacenter",
+                    "Bringing compute capability closer to the source of data by moving workloads from the cloud to edge devices",
+                    "Replacing Azure IoT Hub with a fully on-premises solution",
+                    "Storing all IoT telemetry in Azure Blob Storage for batch processing"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Azure IoT Edge brings compute capability closer to the data source by moving workloads from the cloud to edge devices, overcoming problems of latency and response times."
+            ),
+            Question(
+                id = 2,
+                questionText = "What problem does Azure IoT Edge primarily overcome?",
+                options = listOf(
+                    "High cost of cloud storage",
+                    "Lack of device identity management in IoT Hub",
+                    "Latency and response time issues caused by sending all data to the cloud",
+                    "Inability to run containers in the cloud"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "IoT Edge overcomes the problems of latency and response times by processing data locally on edge devices rather than sending everything to the cloud for processing."
+            ),
+            Question(
+                id = 3,
+                questionText = "Which of the following is an advantage of deploying AI applications on IoT Edge devices?",
+                options = listOf(
+                    "AI models can only be trained and run in the cloud",
+                    "Machine learning models can be trained in the cloud and then deployed on edge devices for local inference",
+                    "IoT Edge eliminates the need for machine learning entirely",
+                    "Edge AI requires dedicated GPU servers at each device location"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "A key advantage of IoT Edge is that ML models can be trained in the cloud and deployed to edge devices — enabling AI inference locally without cloud round trips for every prediction."
+            ),
+            Question(
+                id = 4,
+                questionText = "What is the offline capability of Azure IoT Edge?",
+                options = listOf(
+                    "IoT Edge devices stop functioning when disconnected from the cloud",
+                    "IoT Edge can run in offline mode, storing data securely on the device and continuing operations without cloud connectivity",
+                    "Offline mode is only available for Windows-based IoT Edge devices",
+                    "Offline mode requires a dedicated backup internet connection"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "IoT Edge provides the ability to run in offline mode — devices continue operating, store data securely locally, and sync with the cloud when connectivity is restored."
+            ),
+            Question(
+                id = 5,
+                questionText = "In the glucose monitoring scenario, why is the alert generated at the edge device rather than in the cloud?",
+                options = listOf(
+                    "Cloud services are not reliable enough for medical alerts",
+                    "The edge device generates alerts rapidly without the latency of a cloud round trip, enabling immediate response",
+                    "Cloud services cannot process glucose level data",
+                    "Medical data cannot legally be sent to the cloud"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "The algorithm runs on the IoT Edge device so alarms can be generated rapidly in response to changing glucose levels without the latency of connecting to the cloud — enabling immediate doctor notification."
+            ),
+            Question(
+                id = 6,
+                questionText = "What are IoT Edge modules?",
+                options = listOf(
+                    "Physical hardware components attached to IoT Edge devices",
+                    "Cloud-based virtual machines that process IoT data remotely",
+                    "Units of execution implemented as Docker-compatible containers that run business logic at the edge",
+                    "Azure Resource Manager templates for deploying IoT solutions"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "IoT Edge modules are units of execution implemented as Docker-compatible containers. They run business logic at the edge and can execute Azure services, third-party services, or custom code."
+            ),
+            Question(
+                id = 7,
+                questionText = "What can IoT Edge modules be configured to do with each other?",
+                options = listOf(
+                    "Modules cannot communicate directly with each other",
+                    "Communicate with each other to create a data processing pipeline",
+                    "Replace each other automatically when one fails",
+                    "Synchronize their clocks to ensure consistent timestamps"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "IoT Edge modules can be configured to communicate with each other, creating a pipeline for data processing — allowing you to chain modules together for complex processing workflows."
+            ),
+            Question(
+                id = 8,
+                questionText = "What is the IoT Edge runtime responsible for?",
+                options = listOf(
+                    "Training machine learning models in the cloud",
+                    "Managing IoT Hub device identities and authentication",
+                    "Running on each IoT Edge device, managing modules, ensuring they always run, and reporting module health to the cloud",
+                    "Routing messages between Azure services in the cloud"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "The IoT Edge runtime runs on each IoT Edge device and manages the modules deployed to it — ensuring modules are always running, managing communications, and reporting module health to the cloud."
+            ),
+            Question(
+                id = 9,
+                questionText = "Which of the following is a function of the IoT Edge runtime?",
+                options = listOf(
+                    "Training and updating machine learning models",
+                    "Installing and updating workloads on the edge device",
+                    "Providing a web dashboard for device management",
+                    "Replacing the need for Azure IoT Hub"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "The IoT Edge runtime performs several functions including installing and updating workloads, maintaining security standards, and managing communications between modules, leaf devices, and the cloud."
+            ),
+            Question(
+                id = 10,
+                questionText = "What does the IoT Edge cloud interface enable?",
+                options = listOf(
+                    "Direct physical access to IoT Edge devices",
+                    "Remote monitoring and management of IoT Edge devices at scale",
+                    "Training machine learning models on edge devices",
+                    "Replacing Docker containers with virtual machines"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "The IoT Edge cloud interface enables you to remotely monitor and manage IoT Edge devices at scale — creating workloads for specific device types, deploying them, and monitoring across geographically scattered devices."
+            ),
+            Question(
+                id = 11,
+                questionText = "Why is managing IoT devices 'at scale' important for IoT Edge?",
+                options = listOf(
+                    "Because each device runs a different operating system that needs individual updates",
+                    "Because millions of IoT devices are often different makes, models, and in diverse locations — making per-device management impossible",
+                    "Because edge devices cannot be updated remotely without physical access",
+                    "Because cloud providers charge per device for management operations"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Managing millions of IoT devices that are different makes/models in diverse locations cannot be done per-device — IoT Edge enables workloads to be created, deployed, and monitored at scale centrally."
+            ),
+            Question(
+                id = 12,
+                questionText = "How does IoT Edge manage the end-to-end machine learning deployment cycle on IoT devices?",
+                options = listOf(
+                    "By training models directly on IoT devices using local sensor data",
+                    "By encapsulating ML models in Docker-compatible containers managed by IoT Edge runtime and the cloud interface",
+                    "By requiring developers to manually update each device with new model versions",
+                    "By storing all ML models in Azure Blob Storage and loading them at runtime"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "IoT Edge encapsulates ML models in Docker-compatible containers, allowing the IoT Edge runtime and cloud interface to manage the full lifecycle — deployment, execution, monitoring, and updates."
+            ),
+            Question(
+                id = 13,
+                questionText = "Which capability of IoT Edge allows it to reduce cloud data transfer costs?",
+                options = listOf(
+                    "Deploying using secure and certified hardware",
+                    "Managing data at the edge to process and filter it locally, reducing the volume sent to the cloud",
+                    "Using existing developer skillsets and code",
+                    "Acting as a gateway for downstream devices"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "IoT Edge can manage and process data locally, filtering and aggregating it before sending only relevant summarized data to the cloud — significantly reducing data transfer costs and bandwidth usage."
+            ),
+            Question(
+                id = 14,
+                questionText = "What does it mean for IoT Edge to 'act as a gateway'?",
+                options = listOf(
+                    "IoT Edge provides internet access to devices that lack connectivity",
+                    "IoT Edge acts as an intermediary that translates protocols and aggregates data from downstream leaf devices before forwarding to the cloud",
+                    "IoT Edge replaces the Azure VPN Gateway for on-premises connections",
+                    "IoT Edge acts as a DNS gateway for resolving device names"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "IoT Edge can act as a gateway — sitting between downstream leaf devices and the cloud, translating protocols, aggregating data, and managing communications on behalf of simpler devices."
+            ),
+            Question(
+                id = 15,
+                questionText = "What technology do IoT Edge modules use for deployment?",
+                options = listOf(
+                    "Azure Virtual Machines",
+                    "Docker-compatible containers",
+                    "ARM templates",
+                    "PowerShell scripts"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "IoT Edge modules are deployed as Docker-compatible containers, providing portability, isolation, and consistent runtime environments across different edge device hardware."
+            ),
+            Question(
+                id = 16,
+                questionText = "What is the benefit of using 'secure and certified hardware' for IoT Edge deployments?",
+                options = listOf(
+                    "Certified hardware is cheaper than standard hardware",
+                    "It ensures the edge device hardware meets security standards, providing a trusted foundation for running sensitive workloads",
+                    "Only certified hardware can run Docker containers",
+                    "Certified hardware automatically updates its own firmware"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Deploying on secure and certified hardware ensures the foundation of the IoT Edge deployment meets security standards — providing a hardware root of trust for running sensitive AI and business logic workloads."
+            ),
+            Question(
+                id = 17,
+                questionText = "What does 'distributing AI and analytics workloads to the edge' enable?",
+                options = listOf(
+                    "It removes the need for any cloud connectivity in IoT solutions",
+                    "It allows intelligent processing and decision-making to happen locally on devices, reducing latency and enabling offline AI",
+                    "It transfers all cloud costs to edge device hardware costs",
+                    "It replaces the need for Azure Stream Analytics"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Distributing AI and analytics to the edge enables intelligent local processing and decision-making — running inference and analytics directly on devices, reducing latency and enabling AI even without cloud connectivity."
+            ),
+            Question(
+                id = 18,
+                questionText = "What happens to data on an IoT Edge device when cloud connectivity is poor or unavailable?",
+                options = listOf(
+                    "The device shuts down and waits for connectivity to resume",
+                    "All collected data is permanently lost",
+                    "The device continues operating, storing data securely locally until connectivity is restored",
+                    "The device automatically switches to a backup cellular connection"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "IoT Edge devices reliably operate in offline or intermittent connectivity mode — data is stored securely on the device and synced to the cloud when connectivity is restored."
+            ),
+            Question(
+                id = 19,
+                questionText = "What does the IoT Edge runtime manage in terms of module communication?",
+                options = listOf(
+                    "Only communication between the edge device and the internet",
+                    "Communication between modules on a device, between leaf devices and the IoT Edge device, and between the IoT Edge device and the cloud",
+                    "Only communication between the edge device and Azure IoT Hub",
+                    "Only communication between different IoT Edge devices"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "The IoT Edge runtime manages three levels of communication: between modules on the same device, between downstream leaf devices and the IoT Edge device, and between the IoT Edge device and the cloud."
+            ),
+            Question(
+                id = 20,
+                questionText = "What is the key advantage of using IoT Edge for privacy in IoT deployments?",
+                options = listOf(
+                    "IoT Edge encrypts all data sent to the cloud with military-grade encryption",
+                    "Sensitive data can be processed and kept locally on the edge device without needing to send it to the cloud",
+                    "IoT Edge automatically anonymizes all user data before cloud transmission",
+                    "IoT Edge stores data in a private Azure Government cloud region"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "IoT Edge ensures privacy by enabling sensitive data to be processed locally on the device — keeping confidential data on-premises without transmitting it to the cloud, addressing data sovereignty and privacy concerns."
+            )
+        )
+    )
+
+    // ── QUIZ 15: Azure Governance and Management ─────────────────────
+    private val azureGovernanceQuiz = Quiz(
+        id = "azure_governance_week18",
+        title = "Azure Governance & Management",
+        description = "Week 18 – Azure Costs, Pricing Calculator, TCO, Cost Management & Tags",
+        subject = "CS6006",
+        questions = listOf(
+            Question(
+                id = 1,
+                questionText = "How does Azure shift development costs compared to traditional on-premises infrastructure?",
+                options = listOf(
+                    "From OpEx (operational expenditure) to CapEx (capital expenditure)",
+                    "From CapEx of building infrastructure to OpEx of renting infrastructure as needed",
+                    "Azure eliminates all IT costs entirely",
+                    "From monthly billing to annual upfront payment only"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Azure shifts costs from CapEx (buying physical infrastructure upfront) to OpEx (renting infrastructure as needed) — you pay only for what you use, when you use it."
+            ),
+            Question(
+                id = 2,
+                questionText = "Which of the following is a factor that can affect costs in Azure?",
+                options = listOf(
+                    "The color scheme of your Azure portal theme",
+                    "The number of developers on your team",
+                    "Geography — where your resources are deployed",
+                    "The version of the browser used to access the portal"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Geography is one of the key factors affecting Azure costs — different regions have different pricing due to infrastructure costs, energy costs, and local regulations."
+            ),
+            Question(
+                id = 3,
+                questionText = "How does 'Resource Type' affect Azure costs?",
+                options = listOf(
+                    "All Azure resources cost the same regardless of type",
+                    "Different resource types have different pricing models based on their settings, configuration, and region",
+                    "Resource type only affects costs in the free tier",
+                    "Only compute resources vary in cost — storage is always free"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Resource type significantly affects cost — different Azure resources (VMs, storage, databases) have different pricing models, and settings within each type (size, tier, region) further impact costs."
+            ),
+            Question(
+                id = 4,
+                questionText = "What does 'Consumption' mean as a factor affecting Azure costs?",
+                options = listOf(
+                    "The amount of electricity used by Azure datacenters",
+                    "The number of Azure subscriptions under your account",
+                    "How much of a resource you use — paying for what you consume rather than a fixed amount",
+                    "The number of API calls made to Azure management APIs"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Consumption refers to how much of a resource you actually use — Azure's pay-as-you-go model means costs are directly tied to resource consumption, giving flexibility to scale usage."
+            ),
+            Question(
+                id = 5,
+                questionText = "Why does 'Maintenance' affect Azure costs?",
+                options = listOf(
+                    "Azure charges a maintenance fee for all resources annually",
+                    "Unused or improperly deprovisioned resources continue to accrue costs — good maintenance practices prevent unnecessary spending",
+                    "Maintenance windows require additional compute resources that are billed separately",
+                    "Azure charges extra during maintenance periods when updates are applied"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Maintenance affects costs because resources left running when no longer needed continue to incur charges. Proper maintenance — deprovisioning unused resources — prevents unnecessary Azure spending."
+            ),
+            Question(
+                id = 6,
+                questionText = "What is the Azure Marketplace and how can it affect costs?",
+                options = listOf(
+                    "A free store for downloading Azure documentation and tutorials",
+                    "A platform where third-party vendors sell solutions and services that run on Azure, which may add costs beyond base Azure resource costs",
+                    "A marketplace for buying physical Azure-certified hardware devices",
+                    "An internal Microsoft store for purchasing Azure reserved instances"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Azure Marketplace allows third-party vendors to sell software and services that run on Azure. Using marketplace solutions may involve additional costs beyond the underlying Azure resource costs."
+            ),
+            Question(
+                id = 7,
+                questionText = "What is the purpose of the Azure Pricing Calculator?",
+                options = listOf(
+                    "To calculate the cost of migrating from on-premises to Azure",
+                    "To estimate the cost of running specific Azure services and configurations",
+                    "To track actual spending on existing Azure resources",
+                    "To compare the total cost of AWS vs Azure"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "The Azure Pricing Calculator helps you estimate the costs of specific Azure services and configurations before deploying — allowing you to plan and budget for Azure spending."
+            ),
+            Question(
+                id = 8,
+                questionText = "What is the purpose of the Total Cost of Ownership (TCO) Calculator?",
+                options = listOf(
+                    "To estimate the monthly cost of running Azure VMs",
+                    "To track actual Azure resource spending over time",
+                    "To compare the cost of running workloads on-premises versus in Azure, helping justify cloud migration",
+                    "To calculate reserved instance savings for specific Azure services"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "The TCO Calculator helps organizations compare the cost of running workloads on-premises versus in Azure, providing a financial justification for cloud migration by estimating savings."
+            ),
+            Question(
+                id = 9,
+                questionText = "What is the key difference between the Pricing Calculator and the TCO Calculator?",
+                options = listOf(
+                    "The Pricing Calculator is free; the TCO Calculator requires a subscription",
+                    "The Pricing Calculator estimates Azure service costs; the TCO Calculator compares on-premises vs Azure costs for migration justification",
+                    "The Pricing Calculator works only for VMs; the TCO Calculator works for all services",
+                    "There is no difference — both calculators serve the same purpose"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "The Pricing Calculator estimates what Azure services will cost for your configuration, while the TCO Calculator compares on-premises infrastructure costs to Azure costs to justify migration decisions."
+            ),
+            Question(
+                id = 10,
+                questionText = "What is the Microsoft Cost Management tool used for?",
+                options = listOf(
+                    "Calculating the cost of Azure Marketplace purchases",
+                    "Monitoring, allocating, and optimizing actual Azure cloud spending",
+                    "Estimating costs before deploying Azure resources",
+                    "Managing software licenses for Microsoft 365"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Microsoft Cost Management is a tool for monitoring, allocating, and optimizing actual Azure cloud spending — helping organizations understand where their money is going and control costs."
+            ),
+            Question(
+                id = 11,
+                questionText = "What are the three types of alerts in Azure Cost Management?",
+                options = listOf(
+                    "Usage alerts, Performance alerts, and Security alerts",
+                    "Budget alerts, Credit alerts, and Department spending quota alerts",
+                    "Resource alerts, Network alerts, and Compute alerts",
+                    "Threshold alerts, Anomaly alerts, and Forecast alerts"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "The three types of cost alerts in Azure Cost Management are: Budget alerts (spending reaches defined limits), Credit alerts (Azure credits consumed), and Department spending quota alerts."
+            ),
+            Question(
+                id = 12,
+                questionText = "When are Budget Alerts triggered in Azure Cost Management?",
+                options = listOf(
+                    "Only when spending exceeds 100% of the defined budget",
+                    "When spending based on usage or cost reaches or exceeds the amount defined in the alert condition",
+                    "Only at the end of each billing month",
+                    "When a new resource is deployed regardless of cost"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Budget alerts notify you when spending (based on usage or cost) reaches or exceeds the amount defined in the alert condition — you can set the threshold at any percentage of your budget."
+            ),
+            Question(
+                id = 13,
+                questionText = "What are Credit Alerts in Azure Cost Management?",
+                options = listOf(
+                    "Alerts when your credit card payment is declined",
+                    "Alerts that notify you when your Azure credit monetary commitments are consumed — generated automatically at 90% and 100% of credit balance",
+                    "Alerts when you receive Azure promotional credits",
+                    "Alerts when resources are deployed that qualify for free tier credits"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Credit alerts notify organizations with Enterprise Agreements (EAs) when their Azure credit monetary commitments are being consumed — automatically generated at 90% and 100% of credit balance."
+            ),
+            Question(
+                id = 14,
+                questionText = "At what percentages are Credit Alerts automatically generated?",
+                options = listOf(
+                    "50% and 75%",
+                    "75% and 100%",
+                    "90% and 100%",
+                    "80% and 95%"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Credit alerts are generated automatically at 90% and at 100% of your Azure credit balance, giving organizations advance warning before credits are fully consumed."
+            ),
+            Question(
+                id = 15,
+                questionText = "What are Azure Resource Tags used for?",
+                options = listOf(
+                    "Physically labeling IoT devices with their Azure resource ID",
+                    "Providing extra information or metadata about Azure resources to help with organization, cost management, security, and governance",
+                    "Setting access control permissions on Azure resources",
+                    "Tagging resources for automatic deletion after a set time period"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Resource tags provide metadata about Azure resources — useful for resource management, cost management, operations management, security, governance/compliance, and workload optimization."
+            ),
+            Question(
+                id = 16,
+                questionText = "Which of the following is a valid use case for Azure Resource Tags?",
+                options = listOf(
+                    "Increasing the performance of Azure VMs",
+                    "Automatically scaling resources based on demand",
+                    "Cost management and optimization — tracking which teams or projects are responsible for specific resource costs",
+                    "Encrypting data stored in Azure Blob Storage"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Tags are extremely useful for cost management — tagging resources by department, project, or environment allows organizations to track and allocate costs accurately across teams."
+            ),
+            Question(
+                id = 17,
+                questionText = "Besides subscriptions and resource groups, what is another way to organize Azure resources?",
+                options = listOf(
+                    "Azure Availability Zones",
+                    "Azure Region Pairs",
+                    "Resource Tags",
+                    "Azure Management Groups"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Resource Tags are another way to organize resources beyond subscriptions and resource groups — providing flexible metadata-based organization that cuts across subscription and resource group boundaries."
+            ),
+            Question(
+                id = 18,
+                questionText = "How can Azure Budgets help with cost management?",
+                options = listOf(
+                    "Budgets automatically delete resources when spending limits are reached",
+                    "Budgets allow you to set spending limits and receive alerts when costs approach or exceed those limits",
+                    "Budgets negotiate lower pricing with Microsoft automatically",
+                    "Budgets prevent any new resources from being deployed once the limit is reached"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Azure Budgets let you set spending thresholds and configure alerts to notify you when costs approach or exceed those thresholds — helping you proactively manage and control Azure spending."
+            ),
+            Question(
+                id = 19,
+                questionText = "Which type of Azure agreement do Credit Alerts specifically apply to?",
+                options = listOf(
+                    "Pay-as-you-go subscriptions",
+                    "Free tier accounts",
+                    "Enterprise Agreements (EAs)",
+                    "Student subscriptions"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Credit alerts specifically apply to organizations with Enterprise Agreements (EAs) — notifying them when their Azure credit monetary commitments are being consumed."
+            ),
+            Question(
+                id = 20,
+                questionText = "What metadata can Azure Resource Tags provide that helps with governance and regulatory compliance?",
+                options = listOf(
+                    "The physical location of servers running the resource",
+                    "The encryption algorithm used for data at rest",
+                    "Information such as data classification, owner, compliance requirements, and environment type that helps enforce governance policies",
+                    "The version of the Azure SDK used to deploy the resource"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Tags can store governance metadata such as data classification (confidential, public), owner, compliance requirements, and environment type (production, development) — enabling consistent governance policy enforcement."
+            )
+        )
+    )
+
+    // ── QUIZ 16: Azure Big Data Processing ───────────────────────────
+    private val azureBigDataQuiz = Quiz(
+        id = "azure_big_data_week19",
+        title = "Azure Big Data Processing",
+        description = "Week 19 – Distributed Data Processing, Big Data, Azure Data Lake, Databricks & HDInsight",
+        subject = "CS6006",
+        questions = listOf(
+            Question(
+                id = 1,
+                questionText = "What is Distributed Data Processing?",
+                options = listOf(
+                    "Processing data on a single powerful server with multiple CPUs",
+                    "Processing of large datasets across multiple nodes to enhance performance, scalability, and reliability",
+                    "Storing data in multiple geographic locations for redundancy",
+                    "Compressing large datasets to reduce storage costs"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Distributed Data Processing involves processing large datasets across multiple nodes (servers), enhancing performance through parallelism, scalability by adding nodes, and reliability through redundancy."
+            ),
+            Question(
+                id = 2,
+                questionText = "What is Shared Nothing Architecture (SNA)?",
+                options = listOf(
+                    "A system where all nodes share the same memory and storage pool",
+                    "A distributed computing architecture where each node is independent and self-sufficient, not sharing memory or storage — only communicating via network",
+                    "An architecture where a single master node manages all data for worker nodes",
+                    "A cloud architecture where resources are not shared between tenants"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Shared Nothing Architecture (SNA) is a distributed computing architecture where each node is independent and self-sufficient — nodes do not share memory or storage and only communicate through a network."
+            ),
+            Question(
+                id = 3,
+                questionText = "How does Shared Disk Architecture differ from Shared Nothing Architecture?",
+                options = listOf(
+                    "Shared Disk has no network communication between nodes",
+                    "Shared Disk partitions data so each node owns its own data exclusively",
+                    "Shared Disk allows all nodes to read and write to a common storage pool, unlike SNA which partitions data across independent nodes",
+                    "Shared Disk only allows one node to access storage at a time"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Unlike Shared Nothing Architecture which gives each node its own independent storage, Shared Disk Architecture allows multiple computers to simultaneously access the same shared storage pool."
+            ),
+            Question(
+                id = 4,
+                questionText = "Which of the following best describes the Big Data concept?",
+                options = listOf(
+                    "Data that is stored only in relational databases",
+                    "Extremely large and complex datasets that traditional data processing tools cannot handle efficiently",
+                    "Data that is processed only in batch mode overnight",
+                    "Any dataset larger than 1 gigabyte"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Big Data refers to extremely large and complex datasets — characterized by high volume, velocity, and variety — that cannot be efficiently processed using traditional database tools."
+            ),
+            Question(
+                id = 5,
+                questionText = "What is Azure Data Lake primarily used for?",
+                options = listOf(
+                    "Running containerized microservices at scale",
+                    "Storing and analyzing massive amounts of data of any size, type, and speed",
+                    "Managing virtual machine disk images",
+                    "Sending messages between application components"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Azure Data Lake is designed for storing and analyzing massive amounts of data of any size, type, and processing speed — making it ideal for big data analytics scenarios."
+            ),
+            Question(
+                id = 6,
+                questionText = "According to the Big Data Tools comparison table, which Azure service provides Storage capability?",
+                options = listOf(
+                    "Azure Databricks",
+                    "Azure HDInsight",
+                    "Azure Data Lake",
+                    "All three services provide storage"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "According to the comparison table, Azure Data Lake provides Storage (Yes), while Azure Databricks and HDInsight do not (No) — they are processing-focused services."
+            ),
+            Question(
+                id = 7,
+                questionText = "Which Azure big data services provide Processing capability?",
+                options = listOf(
+                    "Azure Data Lake only",
+                    "Azure Data Lake and Azure Databricks",
+                    "Azure Databricks and Azure HDInsight",
+                    "All three: Data Lake, Databricks, and HDInsight"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "According to the comparison table, Azure Databricks (Yes) and Azure HDInsight (Yes) provide Processing capability, while Azure Data Lake does not (No) — it is focused on storage."
+            ),
+            Question(
+                id = 8,
+                questionText = "Which Azure big data service has the highest integration level according to the comparison table?",
+                options = listOf(
+                    "Azure HDInsight — High integration",
+                    "Azure Data Lake and Azure Databricks — both High integration",
+                    "Azure Databricks only — High integration",
+                    "All three have equal integration levels"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "According to the comparison table, both Azure Data Lake and Azure Databricks have High integration, while Azure HDInsight has Moderate integration."
+            ),
+            Question(
+                id = 9,
+                questionText = "What is Azure Databricks primarily used for?",
+                options = listOf(
+                    "Storing raw unstructured data for long-term archival",
+                    "A fast, easy, and collaborative Apache Spark-based analytics platform for big data processing and machine learning",
+                    "Managing virtual network configurations",
+                    "Provisioning IoT devices at scale"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Azure Databricks is a fast, easy, and collaborative Apache Spark-based analytics platform optimized for Azure — used for big data processing, streaming analytics, and machine learning workloads."
+            ),
+            Question(
+                id = 10,
+                questionText = "What is Azure HDInsight?",
+                options = listOf(
+                    "A serverless function service for event-driven processing",
+                    "A fully managed cloud service for open-source analytics frameworks like Hadoop, Spark, Hive, and Kafka",
+                    "A relational database service for structured data",
+                    "A monitoring tool for tracking Azure resource health"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Azure HDInsight is a fully managed, open-source analytics cloud service that makes it easy to process massive amounts of data using popular open-source frameworks like Hadoop, Spark, Hive, and Kafka."
+            ),
+            Question(
+                id = 11,
+                questionText = "What is Batch Processing in the context of big data?",
+                options = listOf(
+                    "Processing data in real time as it arrives",
+                    "Processing large volumes of data collected over a period of time, typically run on a scheduled basis",
+                    "Processing data only from IoT devices",
+                    "Processing data in parallel using stream analytics"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Batch Processing involves collecting large volumes of data over a period of time and processing them together in a scheduled batch — suitable for non-time-sensitive workloads like monthly reports."
+            ),
+            Question(
+                id = 12,
+                questionText = "What is Stream Processing in the context of big data?",
+                options = listOf(
+                    "Processing historical data stored in data warehouses",
+                    "Scheduling large datasets to be processed overnight",
+                    "Processing data continuously in real time as it is generated or received",
+                    "Streaming video and audio content to end users"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Stream Processing processes data continuously in real time as it is generated — enabling immediate insights and actions, unlike batch processing which works on historical accumulated data."
+            ),
+            Question(
+                id = 13,
+                questionText = "Which of the following is a Batch Processing use case?",
+                options = listOf(
+                    "Real-time fraud detection during a credit card transaction",
+                    "Live traffic monitoring and rerouting",
+                    "Monthly payroll processing and financial report generation",
+                    "Instant alert when a sensor exceeds a temperature threshold"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Monthly payroll processing and financial report generation are classic batch processing use cases — they process accumulated data on a scheduled basis and do not require real-time results."
+            ),
+            Question(
+                id = 14,
+                questionText = "Which of the following is a Stream Processing use case?",
+                options = listOf(
+                    "Generating annual sales reports",
+                    "Processing last month's customer transactions for billing",
+                    "Real-time fraud detection on financial transactions as they happen",
+                    "Nightly backup of database records"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Real-time fraud detection is a stream processing use case — financial transactions must be analyzed instantly as they occur to detect and prevent fraud before they complete."
+            ),
+            Question(
+                id = 15,
+                questionText = "Which of the following is a popular tool for Batch Processing?",
+                options = listOf(
+                    "Apache Kafka",
+                    "Azure Stream Analytics",
+                    "Apache Hadoop MapReduce",
+                    "Apache Flink"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Apache Hadoop MapReduce is one of the most popular tools for batch processing — it processes large datasets in parallel across a cluster by dividing work into map and reduce tasks."
+            ),
+            Question(
+                id = 16,
+                questionText = "Which of the following is a popular tool for Stream Processing?",
+                options = listOf(
+                    "Apache Hadoop",
+                    "Apache Hive",
+                    "Apache MapReduce",
+                    "Apache Kafka"
+                ),
+                correctAnswerIndex = 3,
+                explanation = "Apache Kafka is a popular distributed streaming platform used for real-time stream processing — it handles high-throughput, low-latency data streams at massive scale."
+            ),
+            Question(
+                id = 17,
+                questionText = "What is a key advantage of Shared Nothing Architecture for big data processing?",
+                options = listOf(
+                    "It allows nodes to share memory, reducing data duplication",
+                    "Each node operates independently, enabling linear scalability by simply adding more nodes",
+                    "It requires less network infrastructure than shared disk systems",
+                    "It eliminates the need for data partitioning strategies"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "A key advantage of SNA is linear scalability — since each node is independent with its own storage and memory, you can scale by simply adding more nodes without creating bottlenecks."
+            ),
+            Question(
+                id = 18,
+                questionText = "Which future trend in big data processing involves moving computation closer to data sources?",
+                options = listOf(
+                    "AI-powered Data Processing",
+                    "Hybrid Cloud Solutions",
+                    "Edge Computing",
+                    "Serverless Computing"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Edge Computing is a future trend that moves computation closer to data sources — processing data at the edge reduces latency, bandwidth usage, and the need to send all raw data to the cloud."
+            ),
+            Question(
+                id = 19,
+                questionText = "What does 'AI-powered Data Processing' as a future trend mean?",
+                options = listOf(
+                    "Replacing all human data analysts with robots",
+                    "Using artificial intelligence and machine learning to automate data processing, pattern detection, and insight generation at scale",
+                    "Training AI models only on batch-processed historical data",
+                    "Using AI to reduce the physical size of data storage hardware"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "AI-powered Data Processing is a trend where machine learning and AI are integrated into data pipelines to automate analysis, detect patterns, and generate insights at a scale and speed beyond human capability."
+            ),
+            Question(
+                id = 20,
+                questionText = "What is the main difference between Azure Data Lake and Azure Databricks in terms of their role in a big data solution?",
+                options = listOf(
+                    "Azure Data Lake processes data; Azure Databricks stores data",
+                    "Both Azure Data Lake and Databricks serve identical purposes",
+                    "Azure Data Lake is focused on storage of massive datasets; Azure Databricks is focused on processing and analytics",
+                    "Azure Databricks only works with structured relational data; Data Lake handles unstructured data"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Azure Data Lake focuses on storing massive datasets of any type and size, while Azure Databricks is an analytics and processing platform — they are complementary: Data Lake stores the data, Databricks processes it."
+            )
+        )
+    )
+
+
+    // ── QUIZ 17: DevOps & CI/CD using Azure DevOps ───────────────────
+    private val devOpsQuiz = Quiz(
+        id = "devops_cicd_week20",
+        title = "DevOps & CI/CD",
+        description = "Week 20 – DevOps Practices, CI/CD Pipelines & Azure DevOps",
+        subject = "CS6006",
+        questions = listOf(
+            Question(
+                id = 1,
+                questionText = "What is DevOps?",
+                options = listOf(
+                    "A programming language used for cloud development",
+                    "A software development practice that promotes collaboration between development and operations, resulting in faster and more reliable software delivery",
+                    "A type of cloud deployment model used by large enterprises",
+                    "A testing framework for automated unit tests"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "DevOps is a software development practice that promotes collaboration between development and operations teams, connecting people, process, and technology to deliver continuous value more reliably and quickly."
+            ),
+            Question(
+                id = 2,
+                questionText = "What is DevOps commonly referred to as?",
+                options = listOf(
+                    "A methodology",
+                    "A framework",
+                    "A culture",
+                    "A programming paradigm"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "DevOps is commonly referred to as a culture — it requires deep changes in the way people work and collaborate, not just the adoption of tools or processes."
+            ),
+            Question(
+                id = 3,
+                questionText = "What three things does DevOps connect to deliver continuous value?",
+                options = listOf(
+                    "Hardware, software, and networking",
+                    "Planning, testing, and deployment",
+                    "People, process, and technology",
+                    "Development, security, and operations"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "DevOps connects people, process, and technology to deliver continuous value — all three must work together for a successful DevOps transformation."
+            ),
+            Question(
+                id = 4,
+                questionText = "What is the key difference between Traditional IT and DevOps?",
+                options = listOf(
+                    "Traditional IT uses automation; DevOps relies on manual processes",
+                    "Traditional IT has development and operations working in silos; DevOps uses a collaborative approach with shared responsibility",
+                    "Traditional IT deploys more frequently than DevOps",
+                    "DevOps only works for small organizations; Traditional IT scales better"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "In Traditional IT, development and operations teams work in silos with separate goals. DevOps breaks down these silos with a collaborative approach and shared responsibility for the entire software lifecycle."
+            ),
+            Question(
+                id = 5,
+                questionText = "From which methodologies did DevOps emerge?",
+                options = listOf(
+                    "Waterfall and Six Sigma",
+                    "Agile methodologies and Lean practices",
+                    "PRINCE2 and ITIL",
+                    "Scrum and Kanban only"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "DevOps emerged from Agile methodologies and Lean practices, building on their principles of iterative development, continuous improvement, and waste reduction."
+            ),
+            Question(
+                id = 6,
+                questionText = "Why was DevOps created?",
+                options = listOf(
+                    "To reduce the number of developers needed in a software team",
+                    "To address problems like manual processes causing code errors, out-of-sync teams causing slow delivery, and disappointed business stakeholders",
+                    "To replace Agile development methodologies entirely",
+                    "To eliminate the need for testing in software development"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "DevOps was created to address: highly manual processes causing significant code errors, out-of-sync dev and ops teams causing slow delivery, and the resulting disappointment of business stakeholders."
+            ),
+            Question(
+                id = 7,
+                questionText = "What are the four phases of the DevOps application lifecycle?",
+                options = listOf(
+                    "Design, Code, Test, Release",
+                    "Plan, Develop, Deliver, and Operate",
+                    "Build, Test, Deploy, Monitor",
+                    "Discover, Analyze, Implement, Review"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "DevOps influences the application lifecycle throughout its four phases: Plan, Develop, Deliver, and Operate — each phase relies on the others and is not role-specific."
+            ),
+            Question(
+                id = 8,
+                questionText = "In a true DevOps culture, how are roles distributed across lifecycle phases?",
+                options = listOf(
+                    "Developers only work in the Plan and Develop phases; Operations only works in Deliver and Operate",
+                    "Each role is involved in each phase to some extent",
+                    "Roles are strictly separated to avoid confusion and overlap",
+                    "Only senior engineers participate in all phases"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "In a true DevOps culture, the phases are not role-specific — each role (development, operations, QA, security) is involved in each phase to some extent, promoting shared ownership."
+            ),
+            Question(
+                id = 9,
+                questionText = "Which of the following is a key element of DevOps culture?",
+                options = listOf(
+                    "Strict separation of development and operations responsibilities",
+                    "Long release cycles to ensure stability",
+                    "Collaboration, visibility, alignment, and continuous learning",
+                    "Avoiding automation to maintain human oversight"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Key elements of DevOps culture include collaboration, visibility, alignment, shifts in scope and accountability, shorter release cycles, and continuous learning."
+            ),
+            Question(
+                id = 10,
+                questionText = "What does CI stand for in CI/CD?",
+                options = listOf(
+                    "Continuous Infrastructure",
+                    "Continuous Integration",
+                    "Code Inspection",
+                    "Containerized Instances"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "CI stands for Continuous Integration — the practice of frequently merging code changes from multiple developers into a shared repository, with automated builds and tests run on each merge."
+            ),
+            Question(
+                id = 11,
+                questionText = "What does CD stand for in CI/CD?",
+                options = listOf(
+                    "Code Deployment",
+                    "Containerized Delivery",
+                    "Continuous Deployment or Continuous Delivery",
+                    "Cloud Distribution"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "CD stands for Continuous Deployment or Continuous Delivery — automating the release process so that validated code changes are automatically deployed to production or staging environments."
+            ),
+            Question(
+                id = 12,
+                questionText = "What does CI/CD automate?",
+                options = listOf(
+                    "The hiring process for software developers",
+                    "The software release process — from code integration through testing to deployment",
+                    "The physical server provisioning in datacenters",
+                    "The process of writing user stories and requirements"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "CI/CD automates the software release process — automatically building, testing, and deploying code changes, reducing manual effort and enabling faster, more reliable software delivery."
+            ),
+            Question(
+                id = 13,
+                questionText = "What is 'Infrastructure as Code' (IaC) as a DevOps practice?",
+                options = listOf(
+                    "Writing application code that runs directly on physical hardware",
+                    "Managing and provisioning infrastructure through code and configuration files rather than manual processes",
+                    "Using code to monitor application performance metrics",
+                    "Storing infrastructure documentation in a code repository"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Infrastructure as Code (IaC) is the practice of managing and provisioning infrastructure through machine-readable configuration files — enabling consistent, repeatable infrastructure deployments with version control."
+            ),
+            Question(
+                id = 14,
+                questionText = "What is 'Version Control' as a DevOps practice?",
+                options = listOf(
+                    "Controlling which version of an application end users can access",
+                    "Tracking and managing changes to code over time, enabling collaboration and the ability to revert to previous versions",
+                    "Managing version numbers of API endpoints",
+                    "Controlling the version of operating systems on servers"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Version Control tracks and manages changes to code over time — enabling multiple developers to collaborate, maintain a history of changes, and revert to previous versions if needed."
+            ),
+            Question(
+                id = 15,
+                questionText = "What is 'Continuous Monitoring' in DevOps?",
+                options = listOf(
+                    "Manually checking server logs every hour",
+                    "Continuously observing application performance, infrastructure health, and user behavior to detect and respond to issues in real time",
+                    "Running automated tests only during business hours",
+                    "Monitoring developer productivity through keystrokes and code commits"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Continuous Monitoring involves continuously observing application performance, infrastructure health, and user behavior — enabling teams to detect issues, understand system health, and respond quickly."
+            ),
+            Question(
+                id = 16,
+                questionText = "What is DevSecOps?",
+                options = listOf(
+                    "A separate security team that reviews code after deployment",
+                    "The practice of integrating security practices and testing throughout the entire DevOps pipeline rather than treating it as an afterthought",
+                    "A security tool for scanning Azure virtual machines",
+                    "A compliance framework for government cloud deployments"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "DevSecOps integrates security practices throughout the entire DevOps lifecycle — shifting security left so it is built into every phase rather than being an afterthought applied only at the end."
+            ),
+            Question(
+                id = 17,
+                questionText = "What is Azure DevOps?",
+                options = listOf(
+                    "A cloud-based virtual machine service for running DevOps tools",
+                    "A set of developer services providing end-to-end DevOps capabilities including planning, source control, CI/CD pipelines, and artifact management",
+                    "A monitoring tool for tracking Azure resource performance",
+                    "A code editor integrated into the Azure portal"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Azure DevOps is a set of developer services providing end-to-end DevOps capabilities — including Azure Boards (planning), Azure Repos (source control), Azure Pipelines (CI/CD), and Azure Artifacts."
+            ),
+            Question(
+                id = 18,
+                questionText = "What benefit does connecting development and operations teams bring according to the lecture?",
+                options = listOf(
+                    "Increased hardware costs due to shared resources",
+                    "Increased visibility, more accurate requirements, improved communication, and faster time to market",
+                    "Reduced need for automated testing",
+                    "Longer but more stable release cycles"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Connecting development and operations leads to increased visibility, more accurate requirements, improved communication, and faster time to market — core benefits of the DevOps approach."
+            ),
+            Question(
+                id = 19,
+                questionText = "What is 'Configuration Management' as a DevOps practice?",
+                options = listOf(
+                    "Managing user account settings in Azure Active Directory",
+                    "Tracking and controlling changes to software and infrastructure configurations to maintain consistency across environments",
+                    "Configuring network security groups in Azure",
+                    "Managing billing configurations in the Azure portal"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Configuration Management tracks and controls changes to software and infrastructure configurations — ensuring consistency across development, testing, and production environments and preventing configuration drift."
+            ),
+            Question(
+                id = 20,
+                questionText = "What is the evolutionary path that led to DevOps?",
+                options = listOf(
+                    "From Agile to Scrum to DevOps",
+                    "From Waterfall to Agile to DevOps",
+                    "From DevOps to Agile to Waterfall",
+                    "From Lean to Six Sigma to DevOps"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "DevOps evolved from Waterfall (sequential, slow releases) → Agile (iterative, faster releases) → DevOps (continuous delivery with development and operations collaboration and automation)."
+            )
+        )
+    )
+
+    // ── QUIZ 18: Azure Auto Scaling and Load Balancing ───────────────
+    private val azureAutoScalingQuiz = Quiz(
+        id = "azure_autoscaling_week21",
+        title = "Auto-Scaling & Load Balancing",
+        description = "Week 21 – Azure Auto-Scaling, VM Scale Sets & Load Balancers",
+        subject = "CS6006",
+        questions = listOf(
+            Question(
+                id = 1,
+                questionText = "What is Auto-Scaling in cloud systems?",
+                options = listOf(
+                    "Manually adding servers when traffic increases",
+                    "A process of dynamically allocating resources to match performance requirements",
+                    "Automatically deleting unused resources every month",
+                    "A fixed allocation of resources regardless of demand"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Auto-scaling is the process of dynamically allocating resources to match performance requirements — scaling up when demand increases and scaling down when demand slackens to reduce costs."
+            ),
+            Question(
+                id = 2,
+                questionText = "What are the two main reasons for auto-scaling?",
+                options = listOf(
+                    "To increase security and improve compliance",
+                    "To add resources when demand increases (maintaining SLAs) and remove them when demand slackens (reducing costs)",
+                    "To backup data automatically and restore it when needed",
+                    "To upgrade software versions and apply patches automatically"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Auto-scaling serves two purposes: adding resources when demand increases to maintain performance and meet SLAs, and removing resources when demand drops to reduce unnecessary costs."
+            ),
+            Question(
+                id = 3,
+                questionText = "What management benefit does auto-scaling provide?",
+                options = listOf(
+                    "It eliminates the need for any cloud subscription",
+                    "It automatically writes application code",
+                    "It reduces the need for an operator to continually monitor system performance",
+                    "It replaces the need for load balancers"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Auto-scaling takes advantage of cloud elasticity and reduces management overhead by removing the need for an operator to continually monitor performance and manually adjust resources."
+            ),
+            Question(
+                id = 4,
+                questionText = "How do Azure Virtual Machines implement auto-scaling?",
+                options = listOf(
+                    "Through Azure App Service autoscale settings",
+                    "Through Virtual Machine Scale Sets, which manage a set of VMs as a group",
+                    "Through Azure Functions automatic compute allocation",
+                    "Through manual scaling via the Azure portal"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Azure Virtual Machines autoscale via Virtual Machine Scale Sets (VMSS), which manage a set of virtual machines as a group, automatically increasing or decreasing the number of instances based on demand."
+            ),
+            Question(
+                id = 5,
+                questionText = "How does Azure Functions differ from other compute options regarding auto-scaling?",
+                options = listOf(
+                    "Azure Functions requires you to manually configure autoscale rules",
+                    "Azure Functions cannot auto-scale — it has a fixed compute allocation",
+                    "Azure Functions automatically allocates compute power when code is running, scaling out as necessary without any autoscale rule configuration",
+                    "Azure Functions only scales based on a time schedule"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Azure Functions differs from other compute options because you don't need to configure any autoscale rules — it automatically allocates compute power when code is running and scales out as needed to handle load."
+            ),
+            Question(
+                id = 6,
+                questionText = "What are Azure Virtual Machine Scale Sets?",
+                options = listOf(
+                    "A tool for monitoring VM performance metrics",
+                    "A service that lets you create and manage a group of load-balanced VM instances that can automatically increase or decrease in response to demand",
+                    "A type of Azure storage for VM disk images",
+                    "A security group for controlling VM network access"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Azure VM Scale Sets let you create and manage a group of load-balanced VM instances. The number of instances can automatically increase or decrease in response to demand or a defined schedule."
+            ),
+            Question(
+                id = 7,
+                questionText = "How do VM Scale Sets provide high availability?",
+                options = listOf(
+                    "By keeping all VMs in a single datacenter for low latency",
+                    "By distributing VMs across availability zones or fault domains",
+                    "By running all VMs on the same physical host for consistency",
+                    "By storing VM images in geo-redundant storage"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "VM Scale Sets provide high availability and application resiliency by distributing VMs across availability zones or fault domains — protecting against datacenter and hardware failures."
+            ),
+            Question(
+                id = 8,
+                questionText = "What is the maximum number of VMs that Flexible orchestration in VM Scale Sets can support for high availability?",
+                options = listOf(
+                    "Up to 100 VMs",
+                    "Up to 500 VMs",
+                    "Up to 1,000 VMs",
+                    "Up to 10,000 VMs"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Flexible orchestration in Azure VM Scale Sets provides high availability guarantees for up to 1,000 VMs by spreading them across fault domains in a region or within an Availability Zone."
+            ),
+            Question(
+                id = 9,
+                questionText = "Which of the following workloads can benefit from VM Scale Sets with Flexible orchestration?",
+                options = listOf(
+                    "Only static websites with no dynamic content",
+                    "Only batch processing jobs that run once per day",
+                    "Quorum-based workloads, open-source databases, stateful applications, and services requiring high availability",
+                    "Only IoT device firmware update deployments"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Flexible orchestration supports workloads including quorum-based workloads, open-source databases, stateful applications, high-availability services, and mixed VM type deployments with Spot and on-demand VMs."
+            ),
+            Question(
+                id = 10,
+                questionText = "At which OSI model layer does Azure Load Balancer operate?",
+                options = listOf(
+                    "Layer 7 — Application layer",
+                    "Layer 3 — Network layer",
+                    "Layer 4 — Transport layer",
+                    "Layer 2 — Data Link layer"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Azure Load Balancer operates at Layer 4 (Transport layer) of the OSI model — it makes routing decisions based on IP address and TCP/UDP port, not on application-level content."
+            ),
+            Question(
+                id = 11,
+                questionText = "What is the role of the frontend in an Azure Load Balancer?",
+                options = listOf(
+                    "It stores the health probe configurations",
+                    "It is the single point of contact for clients — receiving inbound traffic and distributing it to backend pool instances",
+                    "It monitors backend VM performance metrics",
+                    "It manages SSL certificate termination for HTTPS traffic"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "The Load Balancer frontend is the single point of contact for clients. Inbound flows arrive at the frontend IP and are distributed to backend pool instances according to load-balancing rules and health probes."
+            ),
+            Question(
+                id = 12,
+                questionText = "What can the backend pool of an Azure Load Balancer consist of?",
+                options = listOf(
+                    "Only Azure App Service instances",
+                    "Only Azure Kubernetes Service pods",
+                    "Azure Virtual Machines or Virtual Machine Scale Sets",
+                    "Only Azure Functions instances"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "The backend pool of an Azure Load Balancer can consist of Azure Virtual Machines (VMs) or Virtual Machine Scale Sets (VMSS) — the instances that receive and process the distributed traffic."
+            ),
+            Question(
+                id = 13,
+                questionText = "What does a Public Load Balancer provide for VMs inside a virtual network?",
+                options = listOf(
+                    "Only inbound connectivity from the internet",
+                    "Both inbound and outbound connectivity — load balancing internet traffic inbound and translating private IPs to public IPs for outbound connections",
+                    "Only connectivity within the virtual network",
+                    "Only DNS resolution for VM hostnames"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "A public load balancer provides both inbound connectivity (load balancing internet traffic to VMs) and outbound connectivity (translating VMs' private IPs to public IPs for outbound connections)."
+            ),
+            Question(
+                id = 14,
+                questionText = "What is an Internal (Private) Load Balancer used for?",
+                options = listOf(
+                    "Load balancing internet traffic to public-facing web servers",
+                    "Translating private IP addresses to public IPs for outbound connections",
+                    "Providing inbound connectivity to VMs in private network scenarios, such as hybrid connections from on-premises networks",
+                    "Managing SSL certificates for HTTPS traffic"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "An Internal (private) Load Balancer provides inbound connectivity to VMs in private network scenarios — such as accessing a load balancer frontend from an on-premises network in a hybrid setup."
+            ),
+            Question(
+                id = 15,
+                questionText = "How does Azure Load Balancer distribute traffic to backend instances?",
+                options = listOf(
+                    "Randomly without any rules",
+                    "Always to the VM with the most available CPU",
+                    "According to configured load-balancing rules and health probes",
+                    "Based on the geographic location of the client"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Azure Load Balancer distributes inbound flows to backend pool instances according to configured load-balancing rules and health probes — ensuring traffic only goes to healthy instances."
+            ),
+            Question(
+                id = 16,
+                questionText = "What is the best practice for zone-redundancy in Azure Load Balancer?",
+                options = listOf(
+                    "Deploy the load balancer in a single availability zone for consistency",
+                    "Deploy with zone-redundancy — ensuring the load balancer's frontend IP is zone-redundant, protecting the data path from zone failure",
+                    "Use a separate load balancer for each availability zone",
+                    "Disable zone redundancy to reduce costs"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Deploying with zone-redundancy provides the best resiliency — the load balancer's availability zone selection is synonymous with its frontend IP's zone selection, protecting against zone failures."
+            ),
+            Question(
+                id = 17,
+                questionText = "Why should the backend pool contain at least two VM instances?",
+                options = listOf(
+                    "Because Azure charges less per VM when you have two or more",
+                    "If the backend pool has only one instance and it becomes unhealthy, all traffic fails due to lack of redundancy",
+                    "Because load balancing requires an even number of instances",
+                    "Because two instances are required to meet GDPR compliance"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Having at least two backend pool instances ensures redundancy — if there is only one instance and it becomes unhealthy, all traffic fails. The Standard Load Balancer SLA also requires at least two healthy instances."
+            ),
+            Question(
+                id = 18,
+                questionText = "What does a Global Load Balancer enable in Azure?",
+                options = listOf(
+                    "Load balancing within a single Azure region only",
+                    "Cross-region load balancing — if one region fails, traffic is routed to the next closest healthy regional load balancer",
+                    "Load balancing between on-premises servers only",
+                    "Automatic DNS resolution across multiple regions"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "A global load balancer enables cross-region load balancing and regional redundancy — if one region fails, traffic is automatically routed to the next closest healthy regional load balancer."
+            ),
+            Question(
+                id = 19,
+                questionText = "How does Azure App Service implement auto-scaling?",
+                options = listOf(
+                    "Through Virtual Machine Scale Sets configured per app",
+                    "Through Azure Functions triggers",
+                    "Through built-in autoscaling where autoscale settings apply to all apps within an App Service",
+                    "Through manual scaling only via the Azure portal"
+                ),
+                correctAnswerIndex = 2,
+                explanation = "Azure App Service has built-in autoscaling — autoscale settings apply to all of the apps within an App Service plan, scaling the underlying compute resources up or down based on defined rules."
+            ),
+            Question(
+                id = 20,
+                questionText = "What is a key advantage of using VM Scale Sets with a mix of Spot and on-demand VMs?",
+                options = listOf(
+                    "Spot VMs provide guaranteed availability at all times",
+                    "It allows cost optimization by using cheaper Spot VMs for non-critical workloads while maintaining on-demand VMs for reliability",
+                    "Mixing VM types increases the maximum scale set size to unlimited",
+                    "On-demand VMs automatically convert to Spot VMs when demand drops"
+                ),
+                correctAnswerIndex = 1,
+                explanation = "Mixing Spot VMs (lower cost, can be evicted) with on-demand VMs in a Scale Set allows cost optimization — using cheaper Spot VMs where possible while on-demand VMs provide baseline reliability."
+            )
+        )
+    )
+
     // ── ADD MORE QUIZZES HERE ─────────────────────────────────────────
     // Example:
     // private val networkingQuiz = Quiz(
@@ -2355,6 +4356,14 @@ object QuizRepository {
         azureStorageQuiz,
         azureIoTQuiz,
         azureIoTServicesQuiz,
+        azureStreamAnalyticsQuiz,
+        serverlessComputingQuiz,
+        cloudIoTSecurityQuiz,
+        azureIoTEdgeQuiz,
+        azureGovernanceQuiz,
+        azureBigDataQuiz,
+        devOpsQuiz,
+        azureAutoScalingQuiz,
         test1Quiz
     )
 
